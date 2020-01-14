@@ -1,15 +1,21 @@
 @import "../../styles/custom-media.css";
 @import '../../styles/custom-properties.css';
 
+/* Sets content to relative and adds padding to root content*/
 .root {
   position: relative;
   padding: 2rem 0;
-
+  /* temp value flex to display content in two horiz columns*/
+  display: flex;
+  /* end temp value. Would be cool to use grid */
   @media (--media-min-medium) {
     padding: 4rem 0;
   }
 }
 
+/* Sets fontsize and props to tiny text in label.
+Content is set in Image Section - Label
+*/
 .label {
   font-size: var(--font-micro-size);
   line-height: var(--font-micro-line-height);
@@ -18,41 +24,54 @@
   margin-top: 1em;
 }
 
+/* Adds margin-top to label and title*/
 .label + .title {
   margin-top: 0.2em;
 }
 
+/* Set fontsize and lineheight to title. Image section - Title
+font-title-x value is size from custom-properties.css
+*/
 .title {
-  font-size: var(--font-title3-size);
-  line-height: var(--font-title3-line-height);
+  font-size: var(--font-title1-size);
+  line-height: var(--font-title1-line-height);
 }
 
+/* Set main values to image. change image in Image -section - Image
+*/
 .image {
-  display: block;
-  width: 100%;
+  width: auto;
+  max-height: 30rem;
 }
 
+/* text content from Image section - Text */
 .content {
   position: relative;
   margin: 0 1.5rem;
   max-width: var(--width-medium);
 
-  @nest & figcaption {
-    width: 100%;
-    box-sizing: border-box;
-  }
 
   @media (--media-min-medium) {
     margin: 0 auto;
     padding-top: 2rem;
-
-    @nest & figcaption {
-      position: absolute;
-      top: 0;
-    }
   }
 }
 
+.imageContent {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  .image {
+
+  }
+}
+/* trying to set column width*/
+.textContainer {
+  width: 70%;
+  
+}
+
+/* This is main container for Text section*/
 .caption {
   width: 100%;
   margin: 0 auto;
@@ -69,6 +88,6 @@
   padding: 1.5rem;
 
   @media (--media-min-medium) {
-    max-width: calc((var(--width-small) / 2) - 3rem);
+    max-width: calc((var(--width-large) / 2) - 3rem);
   }
 }
