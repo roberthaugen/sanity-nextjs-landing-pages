@@ -17,7 +17,16 @@ function ImageSection (props) {
 
   return (
     <div className={styles.root}>
-      <div className={styles.textContainer}>
+      <figure className={styles.content}>
+        <img
+          src={builder
+            .image(image)
+            .auto('format')
+            .width(2000)
+            .url()}
+          className={styles.image}
+          alt={heading}
+        />
         <figcaption>
           <div className={styles.caption}>
             <div className={styles.captionBox}>
@@ -28,26 +37,10 @@ function ImageSection (props) {
             </div>
           </div>
         </figcaption>
-      </div>
-      <div className={styles.imageContent}>
-      <figure>
-        <img
-          src={builder
-            .image(image)
-            .auto('format')
-            .width(1000)
-            .url()}
-          className={styles.image}
-          alt={heading}
-        />
-        </figure>
-        </div>
-        
+      </figure>
     </div>
-    
   )
 }
-
 
 ImageSection.propTypes = {
   heading: PropTypes.string,

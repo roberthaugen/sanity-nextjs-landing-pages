@@ -3,10 +3,10 @@
 
 .root {
   position: relative;
-  color: var(--color-black, rgb(34, 207, 18));
+  color: var(--color-black, #000);
   display: flex;
   margin: 0 auto;
-  max-width: var(--width-large);
+  max-width: var(--width-small);
 }
 
 .root a {
